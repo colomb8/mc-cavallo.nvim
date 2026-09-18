@@ -93,7 +93,7 @@ function M.setup(cfg)
     mc_search_pattern = U.literal_search_pattern(sel_text)
     local match_pos = vim.fn.searchpos(mc_search_pattern, 'nW')
     local is_match_pos = match_pos[1] > 0
-    if is_match_pos then
+    if not is_match_pos then
       if dir == 1 then
         U.setCursor(r1, c1)
       end
@@ -114,6 +114,7 @@ function M.setup(cfg)
   end
 
   local function mccNStart ()
+    -- print("|" .. tostring(mc_search_pattern) .. "|")
     local is_fresh_start = not mc_search_pattern or U.count_mc() == 0
     local cur_match_pos
     if is_fresh_start then
@@ -150,6 +151,7 @@ function M.setup(cfg)
       end
     end
     --
+    -- print("|" .. tostring(mc_search_pattern) .. "|")
     local next_match_pos = vim.fn.searchpos(mc_search_pattern, 'nW')
     local is_next_match_pos = next_match_pos[1] > 0
     --

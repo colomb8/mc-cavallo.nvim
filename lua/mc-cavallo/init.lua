@@ -17,18 +17,17 @@ local M = {}
 function M.setup(user_opts)
 
   local config = vim.tbl_deep_extend("force", {
-    -- omit keys for default values
+    -- omit entries to use their default values
     keymaps = {
-      -- false for disabling
+      -- set to false for disable a keymap
       start = '<C-n>', -- Normal and Visual mode
       skip = '<C-s>', -- Normal mode
       up = '<M-S-k>', -- Normal mode
       down = '<M-S-j>', -- Normal mode
       togglefm = '<C-q>', -- Normal mode
-      exit = '<C-q><C-q>' -- Normal, Visual and Insert mode
+      exit = '<C-q><C-q>', -- Normal, Visual and Insert mode
     },
-  },
-  user_opts or {})
+  }, user_opts or {})
 
   local core = require("mc-cavallo.core")
 
