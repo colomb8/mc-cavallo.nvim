@@ -8,7 +8,7 @@ A Neovim plugin that supercharges Insert Mode with modern editing behavior.
   <img
     src="media/mcc.jpg"
     alt="insert mode with no mercy"
-    width="300"
+    width="250"
   />
 </p>
 
