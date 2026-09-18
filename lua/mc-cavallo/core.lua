@@ -200,7 +200,7 @@ function M.setup(cfg)
   -- mc-cavallo.nvim Keybindings
   ------------------------------------------------------------------------------
 
-  -- Clear all active multicursors
+  -- Clear all active multicursors and reset search pattern
   if cfg.keymaps.exit then
     vim.keymap.set({'n', 'x', 'i'}, cfg.keymaps.exit, function ()
       U.clear_mc()
@@ -225,12 +225,12 @@ function M.setup(cfg)
   end
 
   if cfg.keymaps.start then
-    -- Add a cursor in the current Visial selection,
-    -- exit visual and jump to the next occurrence
-    vim.keymap.set('x', cfg.keymaps.start, mccVStart)
     -- Add a cursor in the current word and
     -- jump to the next occurrence
     vim.keymap.set('n', cfg.keymaps.start, mccNStart)
+    -- Add a cursor in the current Visual selection,
+    -- exit visual and jump to the next occurrence
+    vim.keymap.set('x', cfg.keymaps.start, mccVStart)
   end
 
   if cfg.keymaps.skip then
