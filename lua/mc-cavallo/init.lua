@@ -13,13 +13,10 @@ License: MIT (see LICENSE)
 ------------------------------------------------------------------------------
 
 -- Check requirements
-local version = vim.version()
 
-if not vim.version.ge(version, { 0, 13, 0 }) then
-  error(
-    ("mc-cavallo.nvim requires Neovim >= 0.13 (found %d.%d.%d)")
-      :format(version.major, version.minor, version.patch)
-  )
+local v = vim.version()
+if v.major == 0 and v.minor < 13 then
+  error("mc-cavallo.nvim requires Neovim >= 0.13")
 end
 
 ------------------------------------------------------------------------------
