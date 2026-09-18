@@ -12,6 +12,18 @@ License: MIT (see LICENSE)
 --]]
 ------------------------------------------------------------------------------
 
+-- Check requirements
+local version = vim.version()
+
+if not vim.version.ge(version, { 0, 13, 0 }) then
+  error(
+    ("mc-cavallo.nvim requires Neovim >= 0.13 (found %d.%d.%d)")
+      :format(version.major, version.minor, version.patch)
+  )
+end
+
+------------------------------------------------------------------------------
+
 local M = {}
 
 function M.setup(user_opts)
