@@ -23,12 +23,16 @@ The goal is to provide a small, intuitive layer on top of Neovim's native multic
 
 ## Features
 
-- **Select next occurrence**: start from the word under the cursor or from a Visual selection, and progressively add matching occurrences.
+- **Add a cursor and select the next occurrence**: start from the word under the cursor or from a Visual selection, and progressively add matching occurrences.
 - **Follow mode by default**: keeps multicursor movement synchronized while working with multiple cursors.
-- **Add cursors vertically**: quickly add a cursor above or below the current one.
 - **Skip occurrences**: jump over a match without adding a cursor and continue to the next one.
+- **Add cursors vertically**: quickly add a cursor above or below the current one.
 - **Clean exit**: clear all multicursors and reset the active occurrence search in one action.
 - **Configurable keymaps**: every provided mapping can be customized or disabled.
+
+## Requirements
+
+- Neovim >= 0.13
 
 ## Installation and Configuration
 
@@ -51,7 +55,7 @@ require("mc-cavallo").setup({
 })
 ```
 
->setup() is required - call it without arguments to use the default behavior.
+> `setup()` is required. Call it without arguments to use the default configuration.
 
 - `start`:
   - Visual mode: adds a cursor in the current Visual selection, exits visual mode and jumps to the next occurrence
@@ -81,7 +85,7 @@ require("mc-cavallo").setup({
 
 ## Roadmap
 
-- `:help` Vim documentation - add a help file for `:help mc-cavallo`
+- **Vim documentation**: add a help file for `:help mc-cavallo`.
 - **Main cursor rotation**: cycle the main cursor through the active multicursors.
 - **Previous occurrences**: support selecting and skipping occurrences backwards.
 
