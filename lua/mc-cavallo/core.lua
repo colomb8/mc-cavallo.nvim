@@ -91,6 +91,7 @@ function M.setup(cfg)
     --
     local sel_text = table.concat(sel_text_table, '\n')
     mc_search_pattern = U.literal_search_pattern(sel_text)
+    -- print("|" .. tostring(mc_search_pattern) .. "|")
     local match_pos = vim.fn.searchpos(mc_search_pattern, 'nW')
     local is_match_pos = match_pos[1] > 0
     if not is_match_pos then
@@ -136,6 +137,7 @@ function M.setup(cfg)
         enableFM()
         --
         mc_search_pattern = "\\V\\<" .. vim.fn.expand("<cword>") .. "\\>"
+        -- print("|" .. tostring(mc_search_pattern) .. "|")
       else
         cur_match_pos = {vim.fn.line('.'), vim.fn.col('.')}
         if char == '' then
