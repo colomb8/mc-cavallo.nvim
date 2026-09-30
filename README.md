@@ -83,10 +83,11 @@ require("mc-cavallo").setup({
   - modes: Normal, Visual and Insert mode
   - default: `<C-q><C-q>`
 
+> Note: cursors rotation is available with default keymap, i.e. `[C` and `]C`.
+
 ## Roadmap
 
 - **Vim documentation**: add a help file for `:help mc-cavallo`.
-- **Main cursor rotation**: cycle the main cursor through the active multicursors.
 - **Previous occurrences**: support selecting and skipping occurrences backwards.
 
 ## License
