@@ -177,9 +177,9 @@ local function setKeybindings()
   -- Clear all active multicursors and reset search pattern
   if config.keymaps.exit then
     vim.keymap.set({'n', 'x', 'i'}, config.keymaps.exit, function ()
-      U.clear_mc()
+      U.sendKeys('<Esc>', 'n')
       mc_search_pattern = nil
-      U.sendKeys('<Esc>', 'nx')
+      vim.schedule(U.clear_mc)
     end)
   end
 
